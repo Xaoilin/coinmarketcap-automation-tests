@@ -2,10 +2,13 @@ package com.voxsmart.suite.step.definitions;
 
 import com.voxsmart.suite.cucumber.TestContext;
 import com.voxsmart.suite.page.object.model.CMCHomePage;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 
 import static com.voxsmart.suite.constants.CMCConstants.WEBSITE_URL;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.equalTo;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class HomePageSteps {
@@ -28,5 +31,12 @@ public class HomePageSteps {
         boolean homePageLoaded = homePage.isLoaded();
 
         assertTrue(homePageLoaded);
+    }
+
+    @And("100 results are displayed")
+    public void coins_are_displayed() {
+        int displayedCoinsCount = homePage.getDisplayedCoinsCount();
+
+        assertThat(displayedCoinsCount, equalTo(100));
     }
 }
