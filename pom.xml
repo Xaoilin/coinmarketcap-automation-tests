@@ -7,6 +7,7 @@
     <groupId>org.example</groupId>
     <artifactId>voxsmart</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
 
     <properties>
         <selenium.version>4.1.0</selenium.version>
@@ -18,6 +19,7 @@
         <hamcrest.version>2.2</hamcrest.version>
         <java.faker.version>1.0.2</java.faker.version>
 
+        <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
@@ -126,4 +128,14 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire-plugin.version}</version>
+            </plugin>
+        </plugins>
+    </build>
 </project>
