@@ -16,6 +16,7 @@
         <sl4j.version>1.7.32</sl4j.version>
         <lombok.version>1.18.22</lombok.version>
         <hamcrest.version>2.2</hamcrest.version>
+        <java.faker.version>1.0.2</java.faker.version>
 
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
@@ -67,12 +68,18 @@
 
         <!-- Testing Dependencies -->
 
+        <!-- Java Faker -->
+        <dependency>
+            <groupId>com.github.javafaker</groupId>
+            <artifactId>javafaker</artifactId>
+            <version>${java.faker.version}</version>
+        </dependency>
+
         <!-- JUnit -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
             <version>${junit.version}</version>
-            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.junit.vintage</groupId>

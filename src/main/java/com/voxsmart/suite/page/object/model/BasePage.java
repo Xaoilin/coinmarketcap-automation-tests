@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public abstract class BasePage {
-    private static final int TIMEOUT = 30;
+    private static final int TIMEOUT = 10;
 
     protected WebDriver driver;
     protected WebDriverWait wait;
@@ -23,5 +23,9 @@ public abstract class BasePage {
 
     protected void waitForElementToAppear(WebElement element) {
         wait.until(ExpectedConditions.visibilityOf(element));
+    }
+
+    protected void waitForElementToBeClickable(WebElement element) {
+        wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 }

@@ -4,6 +4,8 @@ import com.voxsmart.suite.cucumber.TestContext;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 
+import static com.voxsmart.suite.constants.CMCConstants.WEBSITE_URL;
+
 public class TestContextHook {
 
     private final TestContext testContext;
@@ -17,6 +19,7 @@ public class TestContextHook {
      */
     @Before
     public void BeforeSteps() {
+        testContext.navigateToPage(WEBSITE_URL);
     }
 
     @After
